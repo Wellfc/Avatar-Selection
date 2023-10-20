@@ -1,0 +1,134 @@
+@charset "utf-8";
+ 
+:root {
+ --app-dark-bg: #181621;
+ --app-dark-gray-bg: #242329;
+ --app-white: #fff;
+ --app-red: #ff3c57;
+ --app-red-hover: #d91e4a;
+ --app-blue: #3c57ff;
+ --app-blue-hover: #364ee6;
+}
+ 
+body {
+ background-color: var(--app-dark-bg);
+ 
+}
+ 
+.container {
+ width: min(100% - 30px, 1080px);
+ margin-inline: auto;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* Main */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+ 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.myAvatar {
+  margin-bottom: 30px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-size: cover;
+  background-image: url("../img/Default-Avatar.jpg");
+}
+
+.avatar-section {
+  display: flex;
+  gap: 30px;
+}
+
+.avatar-list {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.avatar-list:hover {
+  transform: scale(1.1);
+  transition: all 0.25s ease-in-out;
+}
+
+.avatar-1 {
+  background-image: url('../img/Luffy-Avatar.jpg');
+}
+
+.avatar-2 {
+  background-image: url('../img/Nami-Avatar.jpg');
+}
+
+.avatar-3 {
+  background-image: url('../img/Zoro-Avatar.jpg');
+}
+
+.avatar-4 {
+  background-image: url('../img/Ussop-Avatar.jpg');
+}
+
+.avatar-5 {
+  background-image: url('../img/Sanji-Avatar.jpg');
+}
+
+.selected {
+  border: 2px solid var(--app-white);
+  box-shadow: 0 0 5px var(--app-white);
+}
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* btns */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.button-container {
+ margin-top: 60px;
+ display: flex;
+ justify-content: center;
+ gap: 20px;
+}
+
+.btn {
+ color: var(--app-white);
+ font-weight: 600;
+ width: 125px;
+ height: 45px;
+ border-radius: 25px;
+ transition: all 0.25s ease-in-out;
+ cursor: pointer;
+ letter-spacing: 1.5px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+  background-color: #ccc;
+}
+
+#remove {
+ background-color: var(--app-red);
+}
+
+#remove:hover { background-color: var(--app-red-hover); }
+
+#save {
+ background-color: var(--app-blue);
+
+}
+
+#save:hover { background-color: var(--app-blue-hover); }
