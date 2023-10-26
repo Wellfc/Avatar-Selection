@@ -9,6 +9,13 @@
  --app-blue: #3c57ff;
  --app-blue-hover: #364ee6;
 }
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Nunito Sans', Arial, sans-serif;
+}
  
 body {
  background-color: var(--app-dark-bg);
@@ -39,7 +46,7 @@ body {
 }
 
 .myAvatar {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -49,7 +56,8 @@ body {
 
 .avatar-section {
   display: flex;
-  gap: 30px;
+  gap: 17px;
+  overflow: visible;
 }
 
 .avatar-list {
