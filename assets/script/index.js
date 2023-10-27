@@ -1,18 +1,35 @@
 'use strict';
 
+// Utility functions
+function onEvent(event, selector, callback) {
+    return selector.addEventListener(event, callback);
+}
+
+function select(selector, parent = document) {
+    return parent.querySelector(selector);
+}
+
+function selectById(selector, parent = document) {
+    return parent.getElementById(selector);
+}
+
+function selectAll(selector, parent = document) {
+    return [...parent.querySelectorAll(selector)];
+}
+
 // Get all avatar list elements
-const avatarListElements = document.querySelectorAll('.avatar-list');
+const avatarListElements = selectAll('.avatar-list');
 
 // Get myAvatar element
-const myAvatar = document.querySelector('.myAvatar');
+const myAvatar = select('.myAvatar');
 
 // Get the REMOVE and SAVE buttons
-const removeButton = document.getElementById('remove');
-const saveButton = document.getElementById('save');
+const removeButton = selectById('remove');
+const saveButton = selectById('save');
 
 // Add a click event listener to each avatar
 avatarListElements.forEach((avatar, index) => {
-    avatar.addEventListener('click', () => {
+    onEvent('click', avatar, () => {
         // Remove any previously selected avatar
         avatarListElements.forEach((avatar) => {
             avatar.classList.remove('selected');
@@ -27,9 +44,9 @@ avatarListElements.forEach((avatar, index) => {
 });
 
 // Add a click event listener to the SAVE button
-saveButton.addEventListener('click', () => {
+onEvent('click', saveButton, () => {
     // Find the selected avatar
-    const selectedAvatar = document.querySelector('.selected');
+    const selectedAvatar = select('.selected');
 
     if (selectedAvatar) {
         // Set the selected avatar as the background of myAvatar
@@ -46,7 +63,7 @@ saveButton.addEventListener('click', () => {
 });
 
 // Add a click event listener to the REMOVE button
-removeButton.addEventListener('click', () => {
+onEvent('click', removeButton, () => {
     // Reset the background of myAvatar to the default
     myAvatar.style.backgroundImage = 'url("./assets/img/Default-Avatar.jpg")';
     // Disable the REMOVE button
